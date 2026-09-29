@@ -1,0 +1,2 @@
+joblib==1.5.3
+xgboost==2.1.4
