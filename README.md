@@ -893,7 +893,7 @@ Predict-Credit-Score/
 │   ├── evaluation.py
 │   └── inference.py
 │
-├── models/
+├── models./
 │   ├── best_model.pkl
 │   ├── scaler.pkl
 │   ├── label_encoders.pkl
@@ -914,8 +914,6 @@ Predict-Credit-Score/
 ├── .gitignore
 └── README.md
 ```
-
-> The exact files included in the repository may differ depending on the deployment configuration. Large model artifacts and sensitive credentials should not be committed to GitHub.
 
 ---
 
@@ -958,136 +956,7 @@ Predict-Credit-Score/
 
 - Jupyter Notebook
 - VS Code
-- Git
 - GitHub
-
----
-
-# How to Run Locally
-
-## 1. Clone the Repository
-
-```bash
-git clone https://github.com/Lynxparadox/Predict-Credit-Score.git
-cd Predict-Credit-Score
-```
-
-## 2. Create a Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-Activate the environment.
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-### macOS / Linux
-
-```bash
-source venv/bin/activate
-```
-
-## 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## 4. Train the Model
-
-Run the training pipeline:
-
-```bash
-python train.py
-```
-
-The pipeline performs:
-
-```text
-Data Ingestion
-→ Preprocessing
-→ Feature Engineering
-→ Baseline Training
-→ Optuna Tuning
-→ Evaluation
-→ MLflow Tracking
-→ Model Saving
-```
-
-## 5. Run MLflow
-
-```bash
-mlflow ui
-```
-
-Then open the MLflow interface in your browser.
-
-The local MLflow tracking database is:
-
-```text
-mlflow.db
-```
-
-## 6. Run Streamlit
-
-```bash
-streamlit run streamlit_app.py
-```
-
-The application will be available locally through the Streamlit URL displayed in the terminal.
-
----
-
-# AWS Deployment Overview
-
-The cloud deployment process consists of:
-
-### Step 1 — Train the Model
-
-Train and evaluate the models locally.
-
-### Step 2 — Select the Final Model
-
-XGBoost Tuned is selected for deployment.
-
-### Step 3 — Package the Model
-
-Create:
-
-```text
-model.tar.gz
-```
-
-containing the model and preprocessing artifacts.
-
-### Step 4 — Upload to Amazon S3
-
-Upload the model package to the S3 bucket.
-
-### Step 5 — Deploy to SageMaker
-
-Create a SageMaker model and deploy it as a real-time endpoint.
-
-### Step 6 — Configure EC2
-
-Set up the EC2 instance to host the Streamlit application.
-
-### Step 7 — Connect Streamlit to SageMaker
-
-The Streamlit application sends JSON requests to the SageMaker Runtime endpoint.
-
-### Step 8 — Test the Application
-
-Test predictions representing:
-
-- Good
-- Standard
-- Poor
 
 ---
 
@@ -1120,23 +989,4 @@ The final deployed model is **XGBoost Tuned**, selected based on its predictive 
 
 ---
 
-# Author
-
-**Angelyn Nathasya Marpaung**
-
-Data Science Student  
-BINUS University
-
-Interested in:
-
-- Data Analytics
-- Data Science
-- Machine Learning
-- Business Intelligence
-- Machine Learning Deployment
-
----
-
-## Disclaimer
-
-This project is developed for educational and portfolio purposes. The predicted credit score should not be used as a real financial decision-making system without additional validation, governance, fairness assessment, security controls, and domain-specific requirements.
+ess assessment, security controls, and domain-specific requirements.
