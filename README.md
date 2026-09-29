@@ -986,7 +986,3 @@ The main technical outcomes include:
 - Cloud-based model serving
 
 The final deployed model is **XGBoost Tuned**, selected based on its predictive performance and generalization behavior.
-
----
-
-ess assessment, security controls, and domain-specific requirements.
